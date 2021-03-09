@@ -1,0 +1,45 @@
+POST http://localhost:3333/role
+Content-Type: application/json
+
+{
+  "name": "Admin",
+  "description": "Cargo de ADM"
+}
+
+###
+
+POST http://localhost:3333/insurer
+Content-Type: application/json
+
+{
+  "title": "Unimed Vila",
+  "status_id": 1
+}
+###
+
+POST http://localhost:3333/insurer/4/company
+Content-Type: application/json
+
+{
+  "corporate_name": "Minas Clube",
+  "corporate_nickname": "Minas",
+  "status_id": 1
+}
+
+### 
+POST http://localhost:3333/insurer/1/company
+Content-Type: application/json
+
+{
+  "corporate_name": "Imaculada",
+  "corporate_nickname": "Ifc",
+  "status_id": 1
+}
+
+### 
+POST http://localhost:3333/insurer/1/user
+Content-Type: application/json
+
+{
+  "status_id": 1
+}
