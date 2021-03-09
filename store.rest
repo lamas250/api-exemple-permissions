@@ -41,5 +41,9 @@ POST http://localhost:3333/insurer/1/user
 Content-Type: application/json
 
 {
-  "status_id": 1
+  "status_id": 1,
+  "name": "Igor Lasm",
+  "email": "igor@teste,com",
+  "password": "123456",
+  "role_id": 1
 }

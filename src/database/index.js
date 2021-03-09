@@ -15,9 +15,11 @@ Role.init(connection);
 Insurer.init(connection);
 Company.init(connection);
 
+User.associate(connection.models);
+// Role.associate(connection.models);
 Company.associate(connection.models);
 Insurer.associate(connection.models);
-// Status.associate(connection.models);
+
 
 
 module.exports = connection;

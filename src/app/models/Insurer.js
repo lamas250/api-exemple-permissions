@@ -6,7 +6,7 @@ class Insurer extends Model {
 			title: DataTypes.STRING,
 		},
 		{
-			sequelize
+			sequelize      
 		});
   }
   static associate(models) {
