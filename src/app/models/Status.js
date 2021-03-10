@@ -10,8 +10,9 @@ class Status extends Model {
 		});
   }
 	static associate(models) {
-		this.hasMany(models.Company, { foreignKey: 'status_id', as: 'status' });
-		this.hasMany(models.Insurance, { foreignKey: 'status_id', as: 'status' });
+		this.hasMany(models.Company, { foreignKey: 'status_id' });
+		this.hasMany(models.Insurer, { foreignKey: 'status_id' });
+    this.hasMany(models.User, { foreignKey: 'status_id' });
 	}
 }
 

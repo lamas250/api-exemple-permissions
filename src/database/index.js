@@ -15,8 +15,9 @@ Role.init(connection);
 Insurer.init(connection);
 Company.init(connection);
 
+Status.associate(connection.models);
 User.associate(connection.models);
-// Role.associate(connection.models);
+Role.associate(connection.models);
 Company.associate(connection.models);
 Insurer.associate(connection.models);
 

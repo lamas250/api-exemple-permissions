@@ -1,19 +1,18 @@
 const { Model, DataTypes } = require('sequelize');
 
-class Role extends Model {
+class Permission extends Model {
 	static init(sequelize) {
 		super.init({
 			name: DataTypes.STRING,
-			slug: DataTypes.STRING,
-			description: DataTypes.STRING,
 		},
 		{
 			sequelize
 		});
   }
   static associate(models) {
-		this.hasMany(models.User, { foreignKey: 'role_id', as: 'users' });
+    this.hasMany(models.PermissionGroup, 
+      { foreignKey: 'permission_group_id' });
 	}
 }
 
-module.exports = Role;
+module.exports = Permission;

@@ -2,9 +2,8 @@
 function setComeFrom(req, res, next){
   const type = req.path;
   const spliteType = type.split('/');
-  if( spliteType[1] === 'insurer' ){
+  if( spliteType[1] === 'insurer' || spliteType[1] === 'company'){
     req.type = spliteType[1];
-
   }
   next();
 }
