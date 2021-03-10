@@ -6,6 +6,7 @@ const User = require('../app/models/User');
 const Insurer = require('../app/models/Insurer');
 const Company = require('../app/models/Company');
 const Status = require('../app/models/Status');
+const Permission = require('../app/models/Permission');
 
 const connection = new Sequelize(dbConfig);
 
@@ -14,10 +15,13 @@ User.init(connection);
 Role.init(connection);
 Insurer.init(connection);
 Company.init(connection);
+Permission.init(connection);
+// PermissionGroup.init(connection);
 
 Status.associate(connection.models);
 User.associate(connection.models);
 Role.associate(connection.models);
+Permission.associate(connection.models);
 Company.associate(connection.models);
 Insurer.associate(connection.models);
 

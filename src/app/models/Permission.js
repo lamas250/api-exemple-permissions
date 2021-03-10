@@ -6,13 +6,17 @@ class Permission extends Model {
 			name: DataTypes.STRING,
 		},
 		{
-			sequelize
+			sequelize,
+      tableName: 'permissions'
 		});
   }
   static associate(models) {
-    this.belongsTo(models.PermissionGroup, 
-      { foreignKey: 'permission_group_id', as: 'permission_group' });
-	}
+    // this.belongsTo(models.PermissionGroup, 
+    //   { foreignKey: 'permission_group_id', as: 'permission_group' });
+    this.belongsToMany(models.Role, 
+      {through: 'role_permissions', foreignKey: 'permission_id'});
+  };
+
 }
 
 module.exports = Permission;

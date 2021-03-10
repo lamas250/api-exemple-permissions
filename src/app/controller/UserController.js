@@ -1,12 +1,23 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const { index } = require('./InsurerController');
+const Role = require('../models/Role');
+const Permission = require('../models/Permission');
 
 module.exports = {
   async index(req, res){
     const users = await User.findAll({
+      attributes: ['id','come_from_type','come_from_id','name','email','status_id','role_id'],
       include: {
-        association: 'role'
+        model: Role,
+        attributes: ['id','name','slug'],
+        include: {
+          model: Permission,
+          attributes: ['id', 'name'],
+          through: {
+            attributes: []
+          } 
+        }
       }
     });
 
@@ -17,7 +28,6 @@ module.exports = {
     const { name, email, password, status_id, role_id } = req.body;
     const { type } = req;
     const { id } = req.params;
-    const validTypes = ['insurer', 'company'];
 
     if(!type) return res.json({message: 'Cadastro não permitido.'});
   
