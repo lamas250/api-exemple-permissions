@@ -7,7 +7,6 @@ class Permission extends Model {
 		},
 		{
 			sequelize,
-      tableName: 'permissions'
 		});
   }
   static associate(models) {

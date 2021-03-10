@@ -4,14 +4,11 @@ const { index } = require('./InsurerController');
 
 module.exports = {
   async index(req,res){
-    const insurer_id = req.params.id;
-    // console.log(insurer_id);
+    const company_id = req.params.id;
 
-    const insurer = await Insurer.findByPk(insurer_id,{
-      include: { association: 'companies' }
-    });
+    const company = await Company.findByPk(company_id);
 
-    return res.json(insurer);
+    return res.json(company);
   },
 
   async store(req, res) {

@@ -7,7 +7,7 @@
 // 		},
 // 		{
 // 			sequelize,
-//       tableName: 'RolePermissions_permissions',
+//       tableName: 'role_permissions',
 // 		});
 //   }
 //   static associate(models) {

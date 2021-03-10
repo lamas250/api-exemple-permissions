@@ -1,13 +1,23 @@
-GET http://localhost:3333/insurer/1/company
+GET http://localhost:3333/insurer/1
+Content-Type: application/json
 
+{
+  "roleId": 1
+}
 
 ###
 
-GET http://localhost:3333/insurer/1/company
+GET http://localhost:3333/company/1
 
 ###
 
 GET http://localhost:3333/role
+
 ###
 
 GET http://localhost:3333/user
+
+
+###
+
+GET http://localhost:3333/permissions
